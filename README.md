@@ -1,3 +1,7 @@
 # BuildingInfo
-IO projecy
-Dzień dobry
+## Projekt inżynieria oprogramowania
+###Członkowie zespołu:
+- Anna Gruszka
+- Adam Marciniak
+- Eryk Kosmala
+- Mateusz Gajewski
