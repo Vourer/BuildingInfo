@@ -1,6 +1,6 @@
 # BuildingInfo
 ## Projekt inżynieria oprogramowania
-###Członkowie zespołu:
+### Członkowie zespołu:
 - Anna Gruszka
 - Adam Marciniak
 - Eryk Kosmala
