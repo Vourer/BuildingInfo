@@ -16,6 +16,6 @@ Dla administratorów budynków, którzy pragną optymalizować koszty zarządzan
 
 ## Członkowie zespołu:
 - Anna Gruszka
-- Adam Marciniak
-- Eryk Kosmala
+- Adam Marciniak (Proxy Product Owner)
+- Eryk Kosmala (Scrum Master)
 - Mateusz Gajewski
