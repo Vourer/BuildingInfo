@@ -2,6 +2,9 @@
 ## Projekt inżynieria oprogramowania
 Dla administratorów budynków, którzy pragną optymalizować koszty zarządzania budynkami  nasza aplikacja Building Info umożliwi pozyskanie informacji o parametrach budynku na poziomie pomieszczeń, kondygnacji oraz całych budynków. Aplikacja będzie dostępna poprzez GUI a także jako zdalne API dzięki czemu można ją zintegrować z istniejącymi narzędziami.
 
+## Odnośnik do Sprint Backlogu
+https://docs.google.com/spreadsheets/d/16znxdigmIjH9Ctsls1MjmpRbJEqhQWi9s8FN0uXtZ7c/edit?fbclid=IwAR0Kn5xUXAWT_VG_3k3Oe-oNO7aCE1dR0_XrBs0P8TZpBLMFevUKOjk8Qbs#gid=959724132
+
 ## Struktura danych
 - Lokacja to budynek, poziom, lub pomieszczenie
 - Budynek może składać się z poziomów a te z pomieszczeń
