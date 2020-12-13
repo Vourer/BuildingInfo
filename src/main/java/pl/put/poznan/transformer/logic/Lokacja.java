@@ -1,10 +1,17 @@
 package pl.put.poznan.transformer.logic;
 
 public abstract class Lokacja {
-    private String id;
+
+    public Lokacja(int id, String nazwa){
+        this.id = id;
+        this.nazwa = nazwa;
+
+    }
+
+    private int id;
     private String nazwa;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -12,7 +19,11 @@ public abstract class Lokacja {
         return nazwa;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
+    public void setNazwa (String nazwa) {
+        this.nazwa = nazwa;
+    }
+    public abstract double getArea();
 }

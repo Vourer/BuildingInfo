@@ -6,7 +6,15 @@ public class Pomieszczenie extends Lokacja{
     private float heating;
     private float light;
 
-    public float getArea() {
+    public Pomieszczenie(int id, String nazwa) {
+        super(id, nazwa);
+
+    }
+    public void setArea(float area){
+        this.area = area;
+    }
+
+    public double getArea() {
         return area;
     }
 
