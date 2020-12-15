@@ -1,4 +1,4 @@
-package pl.put.poznan.transformer.logic;
+package pl.put.poznan.informer.logic;
 
 public class Pomieszczenie extends Lokacja{
     private double area;

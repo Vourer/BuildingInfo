@@ -1,4 +1,4 @@
-package pl.put.poznan.transformer.logic;
+package pl.put.poznan.informer.logic;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 
 
 public class Budynek extends Lokacja{
-private List<Poziom> poziomy =  new ArrayList<Poziom>();
+    private List<Poziom> poziomy =  new ArrayList<Poziom>();
 
     public Budynek(int id, String nazwa) {
         super(id, nazwa);
@@ -77,6 +77,19 @@ private List<Poziom> poziomy =  new ArrayList<Poziom>();
     @Override
     public double getHeatingPower() {
         return 0;
+    }
+
+    public List<Integer> get_valid_rooms(double coefficient){
+        List<Integer> lista = new ArrayList<Integer>();
+        List<Integer> tmp = new ArrayList<Integer>();
+        for (int i = 0; i < poziomy.size(); i++){
+            tmp = (poziomy.get(i)).get_valid_rooms(coefficient);
+            for (int j = 0; j < tmp.size(); j++){
+                lista.add(tmp.get(j));
+            }
+
+        }
+        return lista;
     }
 
 }

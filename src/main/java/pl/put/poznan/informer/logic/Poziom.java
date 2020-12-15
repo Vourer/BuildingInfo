@@ -1,4 +1,4 @@
-package pl.put.poznan.transformer.logic;
+package pl.put.poznan.informer.logic;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,24 +56,35 @@ public class Poziom extends Lokacja{
         }
         return sum;
     }
-        @Override
-        public double getHeating() {
-            double arr = 0;
-            double pow = 0;
-            for (int i = 0; i < pomieszczenia.size(); i++) {
-                arr+=  pomieszczenia.get(i).getCube();
-                pow += pomieszczenia.get(i).getHeatingPower();
-            }
-            return pow/arr;
+    @Override
+    public double getHeating() {
+        double arr = 0;
+        double pow = 0;
+        for (int i = 0; i < pomieszczenia.size(); i++) {
+            arr+=  pomieszczenia.get(i).getCube();
+            pow += pomieszczenia.get(i).getHeatingPower();
         }
+        return pow/arr;
+    }
 
-        @Override
-        public double getHeatingPower() {
-            double sum = 0;
-            for (int i = 0; i < pomieszczenia.size(); i++) {
-                sum +=  pomieszczenia.get(i).getHeatingPower();
-            }
-            return sum;
+    @Override
+    public double getHeatingPower() {
+        double sum = 0;
+        for (int i = 0; i < pomieszczenia.size(); i++) {
+            sum +=  pomieszczenia.get(i).getHeatingPower();
         }
+        return sum;
+    }
+
+    public List<Integer> get_valid_rooms(double coefficient){
+        List<Integer> lista = new ArrayList<Integer>();
+        for (int i = 0; i < pomieszczenia.size(); i++){
+            if (pomieszczenia.get(i).getHeating()>coefficient){
+                lista.add(pomieszczenia.get(i).getId());
+            }
+
+        }
+        return lista;
+    }
 
 }
