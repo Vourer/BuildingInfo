@@ -15,6 +15,7 @@ import org.json.JSONObject;
 @RestController
 //@RequestMapping("/a/{text}")
 public class BuildingInfoController {
+
     /**
      * Deklaracja i stworzenie nowej instancji bazy danych
      */
@@ -91,8 +92,8 @@ public class BuildingInfoController {
     }
 
     /**
-     * Funkcja zwracająca typ i powierzchnię obiektu o podanym id
-     * Implemenuje metodę GET z frameworku Spring
+     * Funkcja zwracajaca typ i powierzchnie obiektu o podanym id
+     * Implemenuje metode GET z frameworku Spring
      */
     //@RequestMapping("/a/{text}")
     @RequestMapping(method = RequestMethod.GET, produces = "application/json", value = "/get_area/{id}")
@@ -111,8 +112,8 @@ public class BuildingInfoController {
     }
 
     /**
-     * Funkcja zwracająca typ i objętość obiektu o podanym id
-     * Implemenuje metodę GET z frameworku Spring
+     * Funkcja zwracajaca typ i objetosc obiektu o podanym id
+     * Implemenuje metode GET z frameworku Spring
      */
     @RequestMapping(method = RequestMethod.GET, produces = "application/json", value = "/get_volume/{id}")
     public String get_cube(@PathVariable int id) {
@@ -129,8 +130,8 @@ public class BuildingInfoController {
     }
 
     /**
-     * Funkcja zwracająca typ i moc oświetlenia obiektu o podanym id
-     * Implemenuje metodę GET z frameworku Spring
+     * Funkcja zwracajaca typ i moc oswietlenia obiektu o podanym id
+     * Implemenuje metode GET z frameworku Spring
      */
     @RequestMapping(method = RequestMethod.GET, produces = "application/json", value = "/get_light_power/{id}")
     public String get_light_power(@PathVariable int id) {
@@ -147,8 +148,8 @@ public class BuildingInfoController {
     }
 
     /**
-     * Funkcja zwracająca typ i zużycie energii na ogrzewanie obiektu o podanym id
-     * Implemenuje metodę GET z frameworku Spring
+     * Funkcja zwracajaca typ i zuzycie energii na ogrzewanie obiektu o podanym id
+     * Implemenuje metode GET z frameworku Spring
      */
     @RequestMapping(method = RequestMethod.GET, produces = "application/json", value = "/get_heating_power/{id}")
     public String get_heating_power(@PathVariable int id) {
@@ -165,8 +166,8 @@ public class BuildingInfoController {
     }
 
     /**
-     * Funkcja zwracająca listę obiektów przekraczających określony poziom zużycia energii cieplnej
-     * Implemenuje metodę POST z frameworku Spring
+     * Funkcja zwracajaca liste obiektow przekraczajacych okreslony poziom zuzycia energii cieplnej
+     * Implemenuje metode POST z frameworku Spring
      */
     @RequestMapping(method = RequestMethod.POST, value = "/valid_rooms")
     @ResponseBody

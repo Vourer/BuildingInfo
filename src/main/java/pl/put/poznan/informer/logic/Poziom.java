@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * Implementacja klasy Poziom
- * Implementuje funkcje klasy Lokacja w analogiczny sposób co klasa Budynek
+ * Implementuje funkcje klasy Lokacja w analogiczny sposob co klasa Budynek
  * @version 1.0.31
  * @author Delta
  */
@@ -24,7 +24,7 @@ public class Poziom extends Lokacja{
     }
 
     /**
-     * Funkcja zwracająca sumę pól powierzchni pomieszczeń wchodzących w skład poziomu
+     * Funkcja zwracajaca sume pol powierzchni pomieszczen wchodzacych w sklad poziomu
      */
     public double getArea(){
         double sum = 0;
@@ -35,7 +35,7 @@ public class Poziom extends Lokacja{
     }
 
     /**
-     * Funkcja zwracająca objętość poziomu
+     * Funkcja zwracajaca objetosc poziomu
      */
     public double getCube(){
         double sum = 0;
@@ -47,7 +47,7 @@ public class Poziom extends Lokacja{
     }
 
     /**
-     * Funkcja zwracająca stosunek mocy oświetlenia na poziomie budynku w stosunku do jego powierzchni
+     * Funkcja zwracajaca stosunek mocy oswietlenia na poziomie budynku w stosunku do jego powierzchni
      */
     @Override
     public double getLight() {
@@ -61,7 +61,7 @@ public class Poziom extends Lokacja{
     }
 
     /**
-     * Funkcja zwracająca sumę mocy oświetlenia wszystkich pomimeszczeń na danym poziomie
+     * Funkcja zwracajaca sume mocy oswietlenia wszystkich pomimeszczen na danym poziomie
      */
     @Override
     public double getLightPower() {
@@ -73,7 +73,7 @@ public class Poziom extends Lokacja{
     }
 
     /**
-     * Funkcja zwracająca stosunek zużycia energii na ogrzewanie w przeliczeniu na jednostkę objętości poziomu budynku
+     * Funkcja zwracajaca stosunek zuzycia energii na ogrzewanie w przeliczeniu na jednostke objetosci poziomu budynku
      */
     @Override
     public double getHeating() {
@@ -87,7 +87,7 @@ public class Poziom extends Lokacja{
     }
 
     /**
-     * Funkcja zwracająca sumę zużycia energii na ogrzewanie danego poziomu budynku
+     * Funkcja zwracajaca sume zuzycia energii na ogrzewanie danego poziomu budynku
      */
     @Override
     public double getHeatingPower() {
@@ -99,7 +99,7 @@ public class Poziom extends Lokacja{
     }
 
     /**
-     * Funkcja zwracająca listę pomieszczeń przekraczających określony poziom zużycia energii cieplnej w obrębie poziomu
+     * Funkcja zwracajaca liste pomieszczen przekraczajacych okreslony poziom zuzycia energii cieplnej w obrebie poziomu
      */
     public List<Integer> getValidRooms(double coefficient){
         List<Integer> lista = new ArrayList<Integer>();

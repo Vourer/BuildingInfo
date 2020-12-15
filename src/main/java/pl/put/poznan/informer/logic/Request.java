@@ -3,7 +3,7 @@ package pl.put.poznan.informer.logic;
 import java.io.Serializable;
 
 /**
- * Implementacja klasy Request, służącej do wczytywania danych w formacie JSON
+ * Implementacja klasy Request, sluzacej do wczytywania danych w formacie JSON
  * @version 1.0.7
  * @author Delta
  */

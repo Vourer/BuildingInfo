@@ -16,7 +16,7 @@ public class DB {
     }
 
     /**
-     * @return obiekt o wskazanym id, jeżeli istnieje
+     * @return obiekt o wskazanym id, jezeli istnieje
      */
     public Lokacja getObjectById(int id){
         for (int i = 0; i < obiekty.size(); i++) {

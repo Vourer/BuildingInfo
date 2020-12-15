@@ -14,7 +14,7 @@ public class Budynek extends Lokacja{
     private List<Poziom> poziomy =  new ArrayList<Poziom>();
 
     /**
-     * Konstruktor klasy Budynek wywołujący konstruktor abstrakcyjnej klasy nadrzędnej Lokacja
+     * Konstruktor klasy Budynek wywolujacy konstruktor abstrakcyjnej klasy nadrzednej Lokacja
      */
     public Budynek(int id, String nazwa) {
         super(id, nazwa);
@@ -25,14 +25,14 @@ public class Budynek extends Lokacja{
     }
 
     /**
-     * Funkcja dodająca obiekt klasy Poziom do listy poziomów obiektu Budynek
+     * Funkcja dodajaca obiekt klasy Poziom do listy poziomow obiektu Budynek
      */
     public void addPoziom(Poziom p) {
         this.poziomy.add(p);
     }
 
     /**
-     * Funkcja zwracająca sumę pól powierzchni poziomów wchodzących w skład budynku
+     * Funkcja zwracajaca sume pol powierzchni poziomow wchodzacych w sklad budynku
      */
     public double getArea(){
         double sum = 0;
@@ -43,7 +43,7 @@ public class Budynek extends Lokacja{
     }
 
     /**
-     * Funkcja zwracająca objętość budynku
+     * Funkcja zwracajaca objetosc budynku
      */
     public double getCube(){
         double sum = 0;
@@ -55,7 +55,7 @@ public class Budynek extends Lokacja{
     }
 
     /**
-     * Funkcja zwracająca stosunek mocy oświetlenia w budynku do jego powierzchni
+     * Funkcja zwracajaca stosunek mocy oswietlenia w budynku do jego powierzchni
      */
     @Override
     public double getLight() {
@@ -69,8 +69,8 @@ public class Budynek extends Lokacja{
     }
 
     /**
-     * Funkcja zwracająca zero
-     * Implementacja wymagana przez wzgląd na klasę abstrakcyjną
+     * Funkcja zwracajaca zero
+     * Implementacja wymagana przez wzglad na klase abstrakcyjna
      */
     @Override
     public double getLightPower() {
@@ -78,7 +78,7 @@ public class Budynek extends Lokacja{
     }
 
     /**
-     * Funkcja zwracająca stosunek zużycia energii na ogrzewanie w przeliczeniu na jednostkę objętości w budynku
+     * Funkcja zwracajaca stosunek zuzycia energii na ogrzewanie w przeliczeniu na jednostke objetosci w budynku
      */
     @Override
     public double getHeating() {
@@ -92,8 +92,8 @@ public class Budynek extends Lokacja{
     }
 
     /**
-     * Funkcja zwracająca zero
-     * Implementacja wymagana przez wzgląd na klasę abstrakcyjną
+     * Funkcja zwracajaca zero
+     * Implementacja wymagana przez wzglad na klase abstrakcyjna
      */
     @Override
     public double getHeatingPower() {
@@ -101,7 +101,7 @@ public class Budynek extends Lokacja{
     }
 
     /**
-     * Funkcja zwracająca listę pomieszczeń przekraczających określony poziom zużycia energii cieplnej w obrębie budynku
+     * Funkcja zwracajaca liste pomieszczen przekraczajacych okreslony poziom zuzycia energii cieplnej w obrebie budynku
      */
     public List<Integer> getValidRooms(double coefficient){
         List<Integer> lista = new ArrayList<Integer>();

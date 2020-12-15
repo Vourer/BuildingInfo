@@ -8,7 +8,7 @@ package pl.put.poznan.informer.logic;
 public abstract class Lokacja {
 
     /**
-     * Klasa abstrakcyjna w której deklarowane są funkcje używane później przez klasy dziedziczące
+     * Klasa abstrakcyjna w ktorej deklarowane sa funkcje uzywane pozniej przez klasy dziedziczace
      */
     public Lokacja(int id, String nazwa){
         this.id = id;
