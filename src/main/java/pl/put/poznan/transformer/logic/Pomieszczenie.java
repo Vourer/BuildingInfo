@@ -13,20 +13,32 @@ public class Pomieszczenie extends Lokacja{
     public void setArea(float area){
         this.area = area;
     }
+    public void setCube(float cube){
+        this.cube = cube;
+    }
+    public void setLight(float light){
+        this.light = light;
+    }
+    public void setHeating(float heating){
+        this.heating = heating;
+    }
 
     public double getArea() {
         return area;
     }
 
-    public float getCube() {
+    public double getCube() {
         return cube;
     }
 
-    public float getHeating() {
-        return heating;
+
+    @Override
+    public double getLight() {
+        return light/area;
     }
 
-    public float getLight() {
+    @Override
+    public double getLightPower() {
         return light;
     }
 }

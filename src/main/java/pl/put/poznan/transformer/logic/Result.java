@@ -4,14 +4,9 @@ import java.io.Serializable;
 
 public class Result implements Serializable {
     private static final long serialVersionUID = -5054749880960511861L;
-    private int addition;
-    private int subtraction;
-    private int multiplication;
+    private int max_cube;
 
-    public int getAddition() { return addition; }
-    public void setAddition(int addition) { this.addition = addition; }
-    public int getSubtraction() { return subtraction; }
-    public void setSubtraction(int subtraction) { this.subtraction = subtraction; }
-    public int getMultiplication() { return multiplication; }
-    public void setMultiplication(int multiplication) { this.multiplication = multiplication; }
+    public int getMax_cube() {
+        return max_cube;
+    }
 }

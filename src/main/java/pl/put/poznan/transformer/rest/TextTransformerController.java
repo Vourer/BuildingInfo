@@ -19,13 +19,30 @@ public class TextTransformerController {
         db.add(b);
         db.add(p);
         b.addPoziom(p);
+
         for (int i = 1; i<5; i++){
-            Pomieszczenie po = new Pomieszczenie(i+2, "Pokoj");
+            Pomieszczenie po = new Pomieszczenie(i+3, "Pokoj");
             po.setArea(5*i);
+            po.setCube(10*i);
+            po.setLight(222);
+            po.setHeating(22);
             db.add(po);
             p.addPomieszczenie(po);
 
         }
+        p = new Poziom(3, "Poziom 2");
+        db.add(p);
+        b.addPoziom(p);
+        for (int i = 1; i<7; i++){
+            Pomieszczenie po = new Pomieszczenie(10*i+2, "Pokoj");
+            po.setArea(5*i+4);
+            po.setCube(11*i+1);
+            po.setHeating(90);
+            db.add(po);
+            p.addPomieszczenie(po);
+
+        }
+
     }
 
     private static final Logger logger = LoggerFactory.getLogger(TextTransformerController.class);
@@ -57,7 +74,7 @@ public class TextTransformerController {
     }
 
 
-        @RequestMapping(method = RequestMethod.POST, value = "/math")
+       /* @RequestMapping(method = RequestMethod.POST, value = "/math")
         @ResponseBody
         public Result math(@RequestBody final Request request) {
             final Result result = new Result();
@@ -65,7 +82,7 @@ public class TextTransformerController {
             result.setSubtraction(request.getLeft() - request.getRight());
             result.setMultiplication(request.getLeft() * request.getRight());
             return result;
-        }
+        }*/
 
 
     //@RequestMapping("/a/{text}")
@@ -81,10 +98,41 @@ public class TextTransformerController {
             jo.put("area", l.getArea());
             return jo.toString();
         }
-        return "error";
+        return "Id_not_found";
+    }
+    @RequestMapping(method = RequestMethod.GET, produces = "application/json", value = "/get_volume/{id}")
+    public String get_cube(@PathVariable int id) {
+
+
+        if (Objects.nonNull(db.get_object_by_id(id))){
+            Lokacja l = db.get_object_by_id(id);
+            JSONObject jo = new JSONObject();
+            jo.put("id", id);
+            jo.put("type", l.getClass());
+            jo.put("Volume", l.getCube());
+            return jo.toString();
+        }
+        return "Id_not_found";
+    }
+    @RequestMapping(method = RequestMethod.GET, produces = "application/json", value = "/get_light_power/{id}")
+    public String get_light_power(@PathVariable int id) {
+
+
+        if (Objects.nonNull(db.get_object_by_id(id))){
+            Lokacja l = db.get_object_by_id(id);
+            JSONObject jo = new JSONObject();
+            jo.put("id", id);
+            jo.put("type", l.getClass());
+            jo.put("Light power per square meter", l.getLight());
+            return jo.toString();
+        }
+        return "Id_not_found";
     }
 
-    }
+
+
+
+}
 
 
 
