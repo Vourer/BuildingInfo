@@ -3,10 +3,12 @@ import org.springframework.web.bind.annotation.*;
 import pl.put.poznan.informer.logic.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import org.json.JSONObject;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  * Implementacja klasy BuildingInfoController
  * @version 1.0.22
@@ -20,6 +22,7 @@ public class BuildingInfoController {
      * Deklaracja i stworzenie nowej instancji bazy danych
      */
     DB db = new DB();
+    private static final Logger logger = LoggerFactory.getLogger(BuildingInfoController.class);
     public BuildingInfoController(){
         Budynek b1 = new Budynek(1, "Kamienica");
         Poziom p11 = new Poziom(11, "Parter");
@@ -98,7 +101,7 @@ public class BuildingInfoController {
     //@RequestMapping("/a/{text}")
     @RequestMapping(method = RequestMethod.GET, produces = "application/json", value = "/get_area/{id}")
     public String get_area(@PathVariable int id) {
-
+        logger.debug("Get_area, id:" + id);
         System.out.println(id);
         if (Objects.nonNull(db.getObjectById(id))){
             Lokacja l = db.getObjectById(id);
@@ -106,8 +109,12 @@ public class BuildingInfoController {
             jo.put("id", id);
             jo.put("type", l.getClass());
             jo.put("area", l.getArea());
+            logger.debug(jo.toString());
             return jo.toString();
+
         }
+
+        logger.debug("Id_not_found");
         return "Id_not_found";
     }
 
@@ -117,15 +124,18 @@ public class BuildingInfoController {
      */
     @RequestMapping(method = RequestMethod.GET, produces = "application/json", value = "/get_volume/{id}")
     public String get_cube(@PathVariable int id) {
-
+        logger.debug("Get_cube, id:" + id);
         if (Objects.nonNull(db.getObjectById(id))){
             Lokacja l = db.getObjectById(id);
             JSONObject jo = new JSONObject();
             jo.put("id", id);
             jo.put("type", l.getClass());
             jo.put("Volume", l.getCube());
+            logger.debug(jo.toString());
             return jo.toString();
+
         }
+        logger.debug("Id_not_found");
         return "Id_not_found";
     }
 
@@ -135,15 +145,17 @@ public class BuildingInfoController {
      */
     @RequestMapping(method = RequestMethod.GET, produces = "application/json", value = "/get_light_power/{id}")
     public String get_light_power(@PathVariable int id) {
-
+        logger.debug("Get_light_power, id:" + id);
         if (Objects.nonNull(db.getObjectById(id))){
             Lokacja l = db.getObjectById(id);
             JSONObject jo = new JSONObject();
             jo.put("id", id);
             jo.put("type", l.getClass());
             jo.put("Light power per square meter", l.getLight());
+            logger.debug(jo.toString());
             return jo.toString();
         }
+        logger.debug("Id_not_found");
         return "Id_not_found";
     }
 
@@ -153,15 +165,17 @@ public class BuildingInfoController {
      */
     @RequestMapping(method = RequestMethod.GET, produces = "application/json", value = "/get_heating_power/{id}")
     public String get_heating_power(@PathVariable int id) {
-
+        logger.debug("Get_heating_power, id:" + id);
         if (Objects.nonNull(db.getObjectById(id))){
             Lokacja l = db.getObjectById(id);
             JSONObject jo = new JSONObject();
             jo.put("id", id);
             jo.put("type", l.getClass());
             jo.put("Heating power per cube meter", l.getHeating());
+            logger.debug(jo.toString());
             return jo.toString();
         }
+        logger.debug("Id_not_found");
         return "Id_not_found";
     }
 
@@ -172,7 +186,7 @@ public class BuildingInfoController {
     @RequestMapping(method = RequestMethod.POST, value = "/valid_rooms")
     @ResponseBody
     public String valid_rooms(@RequestBody final Request request) {
-
+        logger.debug("valid_rooms, id:" + request.getId());
         int id = request.getId();
         if (Objects.nonNull(db.getObjectById(id))){
             Lokacja l = db.getObjectById(id);
@@ -185,8 +199,10 @@ public class BuildingInfoController {
             for (int i = 0; i < lista.size(); i++){
                 jo.put("room_id_" + i, lista.get(i));
             }
+            logger.debug(jo.toString());
             return jo.toString();
         }
+        logger.debug("Id_not_found");
         return "Id_not_found";
     }
 }
