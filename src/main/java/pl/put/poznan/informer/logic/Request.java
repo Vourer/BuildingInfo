@@ -2,8 +2,13 @@ package pl.put.poznan.informer.logic;
 
 import java.io.Serializable;
 
+/**
+ * Implementacja klasy Request, służącej do wczytywania danych w formacie JSON
+ * @version 1.0.7
+ * @author Delta
+ */
 public class Request implements Serializable {
-    private static final long serialVersionUID = 1513207428686438208L;
+    // to jest wersja nr 1513207428686438208L;
     private double coef;
     private int id;
 

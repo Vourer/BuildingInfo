@@ -1,5 +1,10 @@
 package pl.put.poznan.informer.logic;
 
+/**
+ * Implementacja klasy Pomieszczenie
+ * @version 1.0.31
+ * @author Delta
+ */
 public class Pomieszczenie extends Lokacja{
     private double area;
     private double cube;
@@ -8,7 +13,6 @@ public class Pomieszczenie extends Lokacja{
 
     public Pomieszczenie(int id, String nazwa) {
         super(id, nazwa);
-
     }
     public void setArea(double area){
         this.area = area;

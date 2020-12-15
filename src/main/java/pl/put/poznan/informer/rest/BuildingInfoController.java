@@ -7,12 +7,19 @@ import java.util.List;
 import java.util.Objects;
 import org.json.JSONObject;
 
+/**
+ * Implementacja klasy BuildingInfoController
+ * @version 1.0.22
+ * @author Delta
+ */
 @RestController
 //@RequestMapping("/a/{text}")
 public class BuildingInfoController {
+    /**
+     * Deklaracja i stworzenie nowej instancji bazy danych
+     */
     DB db = new DB();
     public BuildingInfoController(){
-
         Budynek b1 = new Budynek(1, "Kamienica");
         Poziom p11 = new Poziom(11, "Parter");
         db.add(b1);
@@ -40,6 +47,7 @@ public class BuildingInfoController {
             db.add(po);
             p12.addPomieszczenie(po);
         }
+
         Poziom p13 = new Poziom(13, "Strych");
         db.add(p13);
         b1.addPoziom(p13);
@@ -82,13 +90,17 @@ public class BuildingInfoController {
         }
     }
 
+    /**
+     * Funkcja zwracająca typ i powierzchnię obiektu o podanym id
+     * Implemenuje metodę GET z frameworku Spring
+     */
     //@RequestMapping("/a/{text}")
     @RequestMapping(method = RequestMethod.GET, produces = "application/json", value = "/get_area/{id}")
     public String get_area(@PathVariable int id) {
 
         System.out.println(id);
-        if (Objects.nonNull(db.get_object_by_id(id))){
-            Lokacja l = db.get_object_by_id(id);
+        if (Objects.nonNull(db.getObjectById(id))){
+            Lokacja l = db.getObjectById(id);
             JSONObject jo = new JSONObject();
             jo.put("id", id);
             jo.put("type", l.getClass());
@@ -97,12 +109,16 @@ public class BuildingInfoController {
         }
         return "Id_not_found";
     }
+
+    /**
+     * Funkcja zwracająca typ i objętość obiektu o podanym id
+     * Implemenuje metodę GET z frameworku Spring
+     */
     @RequestMapping(method = RequestMethod.GET, produces = "application/json", value = "/get_volume/{id}")
     public String get_cube(@PathVariable int id) {
 
-
-        if (Objects.nonNull(db.get_object_by_id(id))){
-            Lokacja l = db.get_object_by_id(id);
+        if (Objects.nonNull(db.getObjectById(id))){
+            Lokacja l = db.getObjectById(id);
             JSONObject jo = new JSONObject();
             jo.put("id", id);
             jo.put("type", l.getClass());
@@ -111,12 +127,16 @@ public class BuildingInfoController {
         }
         return "Id_not_found";
     }
+
+    /**
+     * Funkcja zwracająca typ i moc oświetlenia obiektu o podanym id
+     * Implemenuje metodę GET z frameworku Spring
+     */
     @RequestMapping(method = RequestMethod.GET, produces = "application/json", value = "/get_light_power/{id}")
     public String get_light_power(@PathVariable int id) {
 
-
-        if (Objects.nonNull(db.get_object_by_id(id))){
-            Lokacja l = db.get_object_by_id(id);
+        if (Objects.nonNull(db.getObjectById(id))){
+            Lokacja l = db.getObjectById(id);
             JSONObject jo = new JSONObject();
             jo.put("id", id);
             jo.put("type", l.getClass());
@@ -126,12 +146,15 @@ public class BuildingInfoController {
         return "Id_not_found";
     }
 
+    /**
+     * Funkcja zwracająca typ i zużycie energii na ogrzewanie obiektu o podanym id
+     * Implemenuje metodę GET z frameworku Spring
+     */
     @RequestMapping(method = RequestMethod.GET, produces = "application/json", value = "/get_heating_power/{id}")
     public String get_heating_power(@PathVariable int id) {
 
-
-        if (Objects.nonNull(db.get_object_by_id(id))){
-            Lokacja l = db.get_object_by_id(id);
+        if (Objects.nonNull(db.getObjectById(id))){
+            Lokacja l = db.getObjectById(id);
             JSONObject jo = new JSONObject();
             jo.put("id", id);
             jo.put("type", l.getClass());
@@ -141,30 +164,30 @@ public class BuildingInfoController {
         return "Id_not_found";
     }
 
-
+    /**
+     * Funkcja zwracająca listę obiektów przekraczających określony poziom zużycia energii cieplnej
+     * Implemenuje metodę POST z frameworku Spring
+     */
     @RequestMapping(method = RequestMethod.POST, value = "/valid_rooms")
     @ResponseBody
     public String valid_rooms(@RequestBody final Request request) {
+
         int id = request.getId();
-        if (Objects.nonNull(db.get_object_by_id(id))){
-            Lokacja l = db.get_object_by_id(id);
+        if (Objects.nonNull(db.getObjectById(id))){
+            Lokacja l = db.getObjectById(id);
             if (l.getClass() != Budynek.class){
                 return "Id is not a building id";
             }
             JSONObject jo = new JSONObject();
             List<Integer> lista = new ArrayList<Integer>();
-            lista = ((Budynek) l).get_valid_rooms(request.getCoef());
+            lista = ((Budynek) l).getValidRooms(request.getCoef());
             for (int i = 0; i < lista.size(); i++){
                 jo.put("room_id_" + i, lista.get(i));
             }
-
             return jo.toString();
         }
         return "Id_not_found";
     }
-
-
-
 }
 
 
