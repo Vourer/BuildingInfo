@@ -1,25 +1,25 @@
 package pl.put.poznan.transformer.logic;
 
 public class Pomieszczenie extends Lokacja{
-    private float area;
-    private float cube;
-    private float heating;
-    private float light;
+    private double area;
+    private double cube;
+    private double heating;
+    private double light;
 
     public Pomieszczenie(int id, String nazwa) {
         super(id, nazwa);
 
     }
-    public void setArea(float area){
+    public void setArea(double area){
         this.area = area;
     }
-    public void setCube(float cube){
+    public void setCube(double cube){
         this.cube = cube;
     }
-    public void setLight(float light){
+    public void setLight(double light){
         this.light = light;
     }
-    public void setHeating(float heating){
+    public void setHeating(double heating){
         this.heating = heating;
     }
 
