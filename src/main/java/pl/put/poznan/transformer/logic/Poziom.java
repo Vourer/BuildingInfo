@@ -24,20 +24,18 @@ public class Poziom extends Lokacja{
         }
         return sum;
     }
-<<<<<<< HEAD
-    public double getCube(){
-        float sum = 0;
-=======
+
+
 
     public double getCube(){
         double sum = 0;
->>>>>>> dd0972356fbe9e787c98a305a0a9792f2a504499
+
         for (int i = 0; i < pomieszczenia.size(); i++) {
             sum +=  pomieszczenia.get(i).getCube();
         }
         return sum;
     }
-<<<<<<< HEAD
+
 
     @Override
     public double getLight() {
@@ -58,7 +56,24 @@ public class Poziom extends Lokacja{
         }
         return sum;
     }
+        @Override
+        public double getHeating() {
+            float arr = 0;
+            float pow = 0;
+            for (int i = 0; i < pomieszczenia.size(); i++) {
+                arr+=  pomieszczenia.get(i).getCube();
+                pow += pomieszczenia.get(i).getHeatingPower();
+            }
+            return pow/arr;
+        }
 
-=======
->>>>>>> dd0972356fbe9e787c98a305a0a9792f2a504499
+        @Override
+        public double getHeatingPower() {
+            float sum = 0;
+            for (int i = 0; i < pomieszczenia.size(); i++) {
+                sum +=  pomieszczenia.get(i).getHeatingPower();
+            }
+            return sum;
+        }
+
 }

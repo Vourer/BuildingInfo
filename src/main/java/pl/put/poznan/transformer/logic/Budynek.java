@@ -33,17 +33,15 @@ private List<Poziom> poziomy =  new ArrayList<Poziom>();
     }
 
     public double getCube(){
-<<<<<<< HEAD
-        float sum = 0;
-=======
+
         double sum = 0;
->>>>>>> dd0972356fbe9e787c98a305a0a9792f2a504499
+
         for (int i = 0; i < poziomy.size(); i++) {
 
             sum += poziomy.get(i).getCube();
         }
         return sum;
-<<<<<<< HEAD
+
 
     }
 
@@ -64,8 +62,21 @@ private List<Poziom> poziomy =  new ArrayList<Poziom>();
     }
 
 
-=======
+
+    @Override
+    public double getHeating() {
+        float arr = 0;
+        float pow = 0;
+        for (int i = 0; i < poziomy.size(); i++) {
+            arr+=  poziomy.get(i).getCube();
+            pow += poziomy.get(i).getHeatingPower();
+        }
+        return pow/arr;
     }
 
->>>>>>> dd0972356fbe9e787c98a305a0a9792f2a504499
+    @Override
+    public double getHeatingPower() {
+        return 0;
+    }
+
 }
