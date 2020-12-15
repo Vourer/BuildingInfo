@@ -47,8 +47,8 @@ private List<Poziom> poziomy =  new ArrayList<Poziom>();
 
     @Override
     public double getLight() {
-        float arr = 0;
-        float pow = 0;
+        double arr = 0;
+        double pow = 0;
         for (int i = 0; i < poziomy.size(); i++) {
             arr+=  poziomy.get(i).getArea();
             pow += poziomy.get(i).getLightPower();
@@ -65,8 +65,8 @@ private List<Poziom> poziomy =  new ArrayList<Poziom>();
 
     @Override
     public double getHeating() {
-        float arr = 0;
-        float pow = 0;
+        double arr = 0;
+        double pow = 0;
         for (int i = 0; i < poziomy.size(); i++) {
             arr+=  poziomy.get(i).getCube();
             pow += poziomy.get(i).getHeatingPower();
