@@ -15,7 +15,7 @@ Dla administratorów budynków, którzy pragną optymalizować koszty zarządzan
   - area = powierzchnia w m^2
   - cube = kubatura pomieszczenia w m^3
   - heating = poziom zużycia energii ogrzewania (float)
-  - light – łączna moc oświetlenia
+  - light = łączna moc oświetlenia
   
 [Implementacja struktury danych](https://github.com/Vourer/BuildingInfo/wiki/Struktura-do-przechowywania-informacji)
 
