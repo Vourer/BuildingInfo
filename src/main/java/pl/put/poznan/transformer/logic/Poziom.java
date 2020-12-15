@@ -24,4 +24,12 @@ public class Poziom extends Lokacja{
         }
         return sum;
     }
+
+    public double getCube(){
+        float sum = 0;
+        for (int i = 0; i < pomieszczenia.size(); i++) {
+            sum +=  pomieszczenia.get(i).getCube();
+        }
+        return sum;
+    }
 }

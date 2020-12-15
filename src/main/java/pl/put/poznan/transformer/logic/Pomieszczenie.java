@@ -14,13 +14,15 @@ public class Pomieszczenie extends Lokacja{
         this.area = area;
     }
 
+    public void setCube(float cube){
+        this.cube = cube;
+    }
+
     public double getArea() {
         return area;
     }
 
-    public float getCube() {
-        return cube;
-    }
+    public double getCube() { return cube; }
 
     public float getHeating() {
         return heating;

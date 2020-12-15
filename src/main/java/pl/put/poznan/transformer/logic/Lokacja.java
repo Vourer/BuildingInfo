@@ -26,4 +26,5 @@ public abstract class Lokacja {
         this.nazwa = nazwa;
     }
     public abstract double getArea();
+    public abstract double getCube();
 }

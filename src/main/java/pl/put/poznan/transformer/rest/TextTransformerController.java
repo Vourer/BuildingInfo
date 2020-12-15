@@ -1,13 +1,13 @@
 package pl.put.poznan.transformer.rest;
+
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 import pl.put.poznan.transformer.logic.*;
 
-import java.io.Console;
 import java.util.Arrays;
 import java.util.Objects;
-import org.json.JSONObject;
 
 @RestController
 //@RequestMapping("/a/{text}")
@@ -22,6 +22,7 @@ public class TextTransformerController {
         for (int i = 1; i<5; i++){
             Pomieszczenie po = new Pomieszczenie(i+2, "Pokoj");
             po.setArea(5*i);
+            po.setCube(5*i*i);
             db.add(po);
             p.addPomieszczenie(po);
 
@@ -79,6 +80,22 @@ public class TextTransformerController {
             jo.put("id", id);
             jo.put("type", l.getClass());
             jo.put("area", l.getArea());
+            return jo.toString();
+        }
+        return "error";
+    }
+
+    //@RequestMapping("/a/{text}")
+    @RequestMapping(method = RequestMethod.GET, produces = "application/json", value = "/get_cube/{id}")
+    public String get_cube(@PathVariable int id) {
+
+        System.out.println(id);
+        if (Objects.nonNull(db.get_object_by_id(id))){
+            Lokacja l = db.get_object_by_id(id);
+            JSONObject jo = new JSONObject();
+            jo.put("id", id);
+            jo.put("type", l.getClass());
+            jo.put("cube", l.getCube());
             return jo.toString();
         }
         return "error";
