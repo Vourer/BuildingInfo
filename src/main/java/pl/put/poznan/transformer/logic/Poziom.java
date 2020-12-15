@@ -18,7 +18,7 @@ public class Poziom extends Lokacja{
 
     }
     public double getArea(){
-        float sum = 0;
+        double sum = 0;
         for (int i = 0; i < pomieszczenia.size(); i++) {
             sum +=  pomieszczenia.get(i).getArea();
         }
@@ -26,7 +26,7 @@ public class Poziom extends Lokacja{
     }
 
     public double getCube(){
-        float sum = 0;
+        double sum = 0;
         for (int i = 0; i < pomieszczenia.size(); i++) {
             sum +=  pomieszczenia.get(i).getCube();
         }

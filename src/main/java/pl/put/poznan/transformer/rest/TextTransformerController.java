@@ -12,20 +12,83 @@ import java.util.Objects;
 @RestController
 //@RequestMapping("/a/{text}")
 public class TextTransformerController {
+
+    /**
+     * Zainicjonowanie Bazy Danych zawierająych informacje o dwóch budynkach
+     * Pierwszy budynek (Kamienica) -> 3 piętra
+     * Drugi budynek (Dom jednorodzinny) -> Dwa piętra
+     */
+
+
     DB db = new DB();
     public TextTransformerController(){
-        Budynek b = new Budynek(1, "budynek");
-        Poziom p = new Poziom(2, "Poziom 1");
-        db.add(b);
-        db.add(p);
-        b.addPoziom(p);
-        for (int i = 1; i<5; i++){
-            Pomieszczenie po = new Pomieszczenie(i+2, "Pokoj");
-            po.setArea(5*i);
-            po.setCube(5*i*i);
-            db.add(po);
-            p.addPomieszczenie(po);
 
+        Budynek b1 = new Budynek(1, "Kamienica");
+        Poziom p11 = new Poziom(11, "Parter");
+        db.add(b1);
+        db.add(p11);
+        b1.addPoziom(p11);
+        for (int i = 1; i<5; i++){
+            Pomieszczenie po = new Pomieszczenie(i+110, "Pokoj");
+            po.setArea(20+5*i);
+            po.setCube((20+5*i)*3.5);
+            po.setHeating(300+(5/i)*50);
+            po.setLight(1200+0.5*i*1000);
+            db.add(po);
+            p11.addPomieszczenie(po);
+        }
+
+        Poziom p12 = new Poziom(12, "Pietro 1");
+        db.add(p12);
+        b1.addPoziom(p12);
+        for (int i = 1; i<6; i++){
+            Pomieszczenie po = new Pomieszczenie(i+120, "Pokoj");
+            po.setArea(20+5*i);
+            po.setCube((20+5*i)*3.5);
+            po.setHeating(300+(5/i)*50);
+            po.setLight(1200+0.5*i*1000);
+            db.add(po);
+            p12.addPomieszczenie(po);
+        }
+        Poziom p13 = new Poziom(13, "Strych");
+        db.add(p13);
+        b1.addPoziom(p13);
+        for (int i = 1; i<3; i++){
+            Pomieszczenie po = new Pomieszczenie(i+130, "Pokoj");
+            po.setArea(50+5*i);
+            po.setCube((50+5*i)*3);
+            po.setHeating(300+(5/i)*50);
+            po.setLight(1200+0.5*i*1000);
+            db.add(po);
+            p13.addPomieszczenie(po);
+        }
+
+        Budynek b2 = new Budynek(2, "Dom jednorodzinny");
+        Poziom p21 = new Poziom(21, "Parter");
+        db.add(b2);
+        db.add(p21);
+        b2.addPoziom(p21);
+        for (int i = 1; i<5; i++){
+            Pomieszczenie po = new Pomieszczenie(i+210, "Pokoj");
+            po.setArea(20+5*i);
+            po.setCube((20+5*i)*3.5);
+            po.setHeating(300+(5/i)*50);
+            po.setLight(1200+0.5*i*1000);
+            db.add(po);
+            p21.addPomieszczenie(po);
+        }
+
+        Poziom p22 = new Poziom(22, "Pietro 1");
+        db.add(p22);
+        b2.addPoziom(p22);
+        for (int i = 1; i<3; i++){
+            Pomieszczenie po = new Pomieszczenie(i+220, "Pokoj");
+            po.setArea(50+5*i);
+            po.setCube((50+5*i)*3);
+            po.setHeating(300+(5/i)*50);
+            po.setLight(1200+0.5*i*1000);
+            db.add(po);
+            p22.addPomieszczenie(po);
         }
     }
 
