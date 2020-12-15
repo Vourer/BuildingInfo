@@ -8,20 +8,14 @@ public class DB {
 
     public void add(Lokacja l){
         this.obiekty.add(l);
-
     }
 
     public Lokacja get_object_by_id (int id){
         for (int i = 0; i < obiekty.size(); i++) {
-
             if(obiekty.get(i).getId() == id){
                 return obiekty.get(i);
-
-
             }
         }
-
         return null;
     }
-
 }

@@ -27,8 +27,11 @@ public abstract class Lokacja {
     }
     public abstract double getArea();
     public abstract double getCube();
+<<<<<<< HEAD
     public abstract double getLight();
     public abstract double getLightPower();
 
 
+=======
+>>>>>>> dd0972356fbe9e787c98a305a0a9792f2a504499
 }

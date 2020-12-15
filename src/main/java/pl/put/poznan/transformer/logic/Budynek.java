@@ -23,7 +23,7 @@ private List<Poziom> poziomy =  new ArrayList<Poziom>();
     }
 
     public double getArea(){
-        float sum = 0;
+        double sum = 0;
         for (int i = 0; i < poziomy.size(); i++) {
 
             sum += poziomy.get(i).getArea();
@@ -33,12 +33,17 @@ private List<Poziom> poziomy =  new ArrayList<Poziom>();
     }
 
     public double getCube(){
+<<<<<<< HEAD
         float sum = 0;
+=======
+        double sum = 0;
+>>>>>>> dd0972356fbe9e787c98a305a0a9792f2a504499
         for (int i = 0; i < poziomy.size(); i++) {
 
             sum += poziomy.get(i).getCube();
         }
         return sum;
+<<<<<<< HEAD
 
     }
 
@@ -59,4 +64,8 @@ private List<Poziom> poziomy =  new ArrayList<Poziom>();
     }
 
 
+=======
+    }
+
+>>>>>>> dd0972356fbe9e787c98a305a0a9792f2a504499
 }
