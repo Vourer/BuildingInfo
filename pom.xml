@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-        
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -12,13 +12,13 @@
 
     <groupId>pl.put.poznan</groupId>
     <artifactId>BuildingInfo</artifactId>
-    <version>1.0.31</version>
+    <version>1.0.32</version>
 
-	<properties>
+	   <properties>
         <java.version>11</java.version>
     </properties>
 
-    
+
     <dependencies>
         <dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -42,7 +42,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
         <dependency>
             <groupId>com.jayway.jsonpath</groupId>
             <artifactId>json-path</artifactId>
@@ -61,6 +61,21 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+              <!-- Build an executable JAR -->
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-jar-plugin</artifactId>
+              <version>3.1.0</version>
+              <configuration>
+                <archive>
+                  <manifest>
+                    <addClasspath>true</addClasspath>
+                    <classpathPrefix>lib/</classpathPrefix>
+                    <mainClass>pl.put.poznan.informer.app.BuildingInfoApplication</mainClass>
+                  </manifest>
+                </archive>
+              </configuration>
             </plugin>
         </plugins>
     </build>
