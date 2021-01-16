@@ -54,7 +54,7 @@ public class Poziom extends Lokacja{
         double arr = 0;
         double pow = 0;
         for (int i = 0; i < pomieszczenia.size(); i++) {
-            arr+=  pomieszczenia.get(i).getArea();
+            arr += pomieszczenia.get(i).getArea();
             pow += pomieszczenia.get(i).getLightPower();
         }
         return pow/arr;
