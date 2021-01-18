@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class PoziomTest {
     private Poziom testPoz;
 
@@ -20,7 +21,7 @@ public class PoziomTest {
             pom.setLight(4.0);
             pom.setArea(2.0);
             pom.setHeating(6.0);
-            pom.setCube(3.0);
+            pom.setCube(i);  // 1, 2, 3
             testPoz.addPomieszczenie(pom);
         }
     }
@@ -32,7 +33,7 @@ public class PoziomTest {
 
     @Test
     void testGetCube() {
-        assertEquals(testPoz.getCube(), 9.0);
+        assertEquals(testPoz.getCube(), 6.0);
     }
 
     @Test
@@ -47,7 +48,7 @@ public class PoziomTest {
 
     @Test
     void testGetHeating() {
-        assertEquals(testPoz.getHeating(), 18.0/9.0);
+        assertEquals(testPoz.getHeating(), 18.0/6.0);
     }
 
     @Test
@@ -57,13 +58,14 @@ public class PoziomTest {
 
     @Test
     void testGetValidRooms() {
-        // pusta lista
-        assertEquals(testPoz.getValidRooms(3.0), Collections.emptyList());
-        // wszystkie pomieszczenia
+        assertEquals(testPoz.getValidRooms(10.0), Collections.emptyList());
+
         List<Integer> roomNums = new ArrayList<Integer>();
-        roomNums.add(101);
-        roomNums.add(102);
-        roomNums.add(103);
+        roomNums.add(101);  // heating = 6
+        assertEquals(testPoz.getValidRooms(5.0), roomNums);
+        roomNums.add(102);  // heating = 3
+        assertEquals(testPoz.getValidRooms(2.5), roomNums);
+        roomNums.add(103);  // heating = 2
         assertEquals(testPoz.getValidRooms(1.0), roomNums);
     }
 
