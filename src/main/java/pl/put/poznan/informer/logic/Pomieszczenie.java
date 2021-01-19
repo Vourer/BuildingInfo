@@ -10,6 +10,8 @@ public class Pomieszczenie extends Lokacja{
     private double cube;
     private double heating;
     private double light;
+    private double rent;
+    private double water;
 
     public Pomieszczenie(int id, String nazwa) {
         super(id, nazwa);
@@ -25,6 +27,12 @@ public class Pomieszczenie extends Lokacja{
     }
     public void setHeating(double heating){
         this.heating = heating;
+    }
+    public void setRent(double rent){
+        this.rent = rent;
+    }
+    public void setWater(double water){
+        this.water = water;
     }
 
     public double getArea() {
@@ -53,5 +61,18 @@ public class Pomieszczenie extends Lokacja{
     @Override
     public double getHeatingPower() {
         return heating;
+    }
+
+    @Override
+    public double getRent() {
+        return rent;
+    }
+
+    @Override
+    public double getRentPerArea() { return rent/area; }
+
+    @Override
+    public double getWater() {
+        return water;
     }
 }

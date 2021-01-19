@@ -80,7 +80,7 @@ public class Poziom extends Lokacja{
         double arr = 0;
         double pow = 0;
         for (int i = 0; i < pomieszczenia.size(); i++) {
-            arr+=  pomieszczenia.get(i).getCube();
+            arr += pomieszczenia.get(i).getCube();
             pow += pomieszczenia.get(i).getHeatingPower();
         }
         return pow/arr;
@@ -110,4 +110,43 @@ public class Poziom extends Lokacja{
         }
         return lista;
     }
+
+    /**
+     * Funkcja zwracajaca sume czynszy pomieszczen danego poziomu budynku
+     */
+    @Override
+    public double getRent() {
+        double sum = 0;
+        for (int i = 0; i < pomieszczenia.size(); i++) {
+            sum +=  pomieszczenia.get(i).getRent();
+        }
+        return sum;
+    }
+
+    /**
+     * Funkcja zwracajaca stosunek sumy czynszy do sumy powierzchni wszystkich pomieszczen danego poziomu budynku
+     */
+    @Override
+    public double getRentPerArea() {
+        double arr = 0;
+        double ren = 0;
+        for (int i = 0; i < pomieszczenia.size(); i++) {
+            arr += pomieszczenia.get(i).getArea();
+            ren += pomieszczenia.get(i).getRent();
+        }
+        return ren/arr;
+    }
+
+    /**
+     * Funkcja zwracajaca sume zuzycia wody we wszystkich pomieszczeniach danego poziomu budynku
+     */
+    @Override
+    public double getWater() {
+        double sum = 0;
+        for (int i = 0; i < pomieszczenia.size(); i++) {
+            sum +=  pomieszczenia.get(i).getWater();
+        }
+        return sum;
+    }
+
 }

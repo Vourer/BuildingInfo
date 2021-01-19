@@ -35,6 +35,8 @@ public class BuildingInfoController {
             po.setCube((20+5*i)*3.5);
             po.setHeating(300+(5/i)*50);
             po.setLight(1200+0.5*i*1000);
+            po.setRent(20+5*i*40);
+            po.setWater(200+(5/i)*60);
             db.add(po);
             p11.addPomieszczenie(po);
         }
@@ -48,6 +50,8 @@ public class BuildingInfoController {
             po.setCube((20+5*i)*3.5);
             po.setHeating(300+(5/i)*50);
             po.setLight(1200+0.5*i*1000);
+            po.setRent(20+5*i*40);
+            po.setWater(200+(5/i)*60);
             db.add(po);
             p12.addPomieszczenie(po);
         }
@@ -61,6 +65,8 @@ public class BuildingInfoController {
             po.setCube((50+5*i)*3);
             po.setHeating(300+(5/i)*50);
             po.setLight(1200+0.5*i*1000);
+            po.setRent(20+5*i*40);
+            po.setWater(200+(5/i)*60);
             db.add(po);
             p13.addPomieszczenie(po);
         }
@@ -76,6 +82,8 @@ public class BuildingInfoController {
             po.setCube((20+5*i)*3.5);
             po.setHeating(300+(5/i)*50);
             po.setLight(1200+0.5*i*1000);
+            po.setRent(20+5*i*40);
+            po.setWater(200+(5/i)*60);
             db.add(po);
             p21.addPomieszczenie(po);
         }
@@ -89,6 +97,8 @@ public class BuildingInfoController {
             po.setCube((50+5*i)*3);
             po.setHeating(300+(5/i)*50);
             po.setLight(1200+0.5*i*1000);
+            po.setRent(20+5*i*40);
+            po.setWater(200+(5/i)*60);
             db.add(po);
             p22.addPomieszczenie(po);
         }

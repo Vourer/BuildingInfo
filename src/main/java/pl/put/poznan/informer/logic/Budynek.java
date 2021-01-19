@@ -114,4 +114,42 @@ public class Budynek extends Lokacja{
         }
         return lista;
     }
+
+    /**
+     * Funkcja zwracajaca sume czynszy na wszystkich poziomach danego poziomu budynku
+     */
+    @Override
+    public double getRent() {
+        double sum = 0;
+        for (int i = 0; i < poziomy.size(); i++) {
+            sum +=  poziomy.get(i).getRent();
+        }
+        return sum;
+    }
+
+    /**
+     * Funkcja zwracajaca stosunek sumy czynszy do sumy powierzchni wszystkich poziomów w budynku
+     */
+    @Override
+    public double getRentPerArea() {
+        double arr = 0;
+        double ren = 0;
+        for (int i = 0; i < poziomy.size(); i++) {
+            arr += poziomy.get(i).getArea();
+            ren += poziomy.get(i).getRent();
+        }
+        return ren/arr;
+    }
+
+    /**
+     * Funkcja zwracajaca sume zuzycia wody na wszystkich poziomach danego budynku
+     */
+    @Override
+    public double getWater() {
+        double sum = 0;
+        for (int i = 0; i < poziomy.size(); i++) {
+            sum +=  poziomy.get(i).getWater();
+        }
+        return sum;
+    }
 }

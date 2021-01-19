@@ -40,4 +40,8 @@ public abstract class Lokacja {
 
     public abstract double getHeating();
     public abstract double getHeatingPower();
+
+    public abstract double getRent();
+    public abstract double getRentPerArea();
+    public abstract double getWater();
 }
