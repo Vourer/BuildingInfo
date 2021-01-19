@@ -20,7 +20,7 @@ Dla administratorów budynków, którzy pragną optymalizować koszty zarządzan
 [Implementacja struktury danych](https://github.com/Vourer/BuildingInfo/wiki/Struktura-do-przechowywania-informacji)
 
 ## Członkowie zespołu:
-- Anna Gruszka
-- Adam Marciniak (Proxy Product Owner)
-- Eryk Kosmala (Scrum Master)
-- Mateusz Gajewski
+- Anna Gruszka (Scrum Master)
+- Adam Marciniak
+- Eryk Kosmala
+- Mateusz Gajewski (Proxy Product Owner)
