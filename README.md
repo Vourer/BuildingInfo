@@ -31,7 +31,7 @@ Nasze propozycje nowych funkcji dodaliśmy do Sprint Backlogu, konieczność ich
 - funkcja zwracająca czynsz na jednostkę powierzchni
 - funkcja zwracająca miesięczne zużycie wody
 
-Aby umożliwić implementację tych funkcji, zmodfikowaliśmy strukturę do przechowwania informacji.
+Aby umożliwić implementację tych funkcji, zmodyfikowaliśmy strukturę do przechowywania informacji.
 
 ## Członkowie zespołu:
 - Anna Gruszka (Scrum Master)
