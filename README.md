@@ -19,6 +19,20 @@ Dla administratorów budynków, którzy pragną optymalizować koszty zarządzan
   
 [Implementacja struktury danych](https://github.com/Vourer/BuildingInfo/wiki/Struktura-do-przechowywania-informacji)
 
+## Sprint #1 Retrospektywa
+Po konsultacjach z prowadzącym udało nam się zademonstrować poprawnie działający program.
+W trakcie pierwszego Sprintu udało nam się spełnić wszystkie nasze wcześniejsze założenia.
+Nie wystąpiły żadne komplikacje, które wymagały naszej interwencji i naprawy.
+Na prośbę prowadzącego dodaliśmy kilka nowych funkcjonalności, które mieliśmy zaimplementować w ramach drugiego sprintu.
+Nasze propozycje nowych funkcji dodaliśmy do Sprint Backlogu, konieczność ich implementacji zaznaczyliśmy w Github Projects.
+
+### Propozycje nowych funkcjonalności:
+- funkcja zwracająca czynsz
+- funkcja zwracająca czynsz na jednostkę powierzchni
+- funkcja zwracająca miesięczne zużycie wody
+
+Aby umożliwić implementację tych funkcji, zmodfikowaliśmy strukturę do przechowwania informacji.
+
 ## Członkowie zespołu:
 - Anna Gruszka (Scrum Master)
 - Adam Marciniak
