@@ -108,7 +108,6 @@ public class BuildingInfoController {
      * Funkcja zwracajaca typ i powierzchnie obiektu o podanym id
      * Implemenuje metode GET z frameworku Spring
      */
-    //@RequestMapping("/a/{text}")
     @RequestMapping(method = RequestMethod.GET, produces = "application/json", value = "/get_area/{id}")
     public String get_area(@PathVariable int id) {
         logger.debug("Get_area, id:" + id);
@@ -212,6 +211,72 @@ public class BuildingInfoController {
             logger.debug(jo.toString());
             return jo.toString();
         }
+        logger.debug("Id_not_found");
+        return "Id_not_found";
+    }
+
+    /**
+     * Funkcja zwracajaca typ i czynsz obiektu o podanym id
+     * Implemenuje metode GET z frameworku Spring
+     */
+    @RequestMapping(method = RequestMethod.GET, produces = "application/json", value = "/get_rent/{id}")
+    public String get_rent(@PathVariable int id) {
+        logger.debug("Get_rent, id:" + id);
+        System.out.println(id);
+        if (Objects.nonNull(db.getObjectById(id))){
+            Lokacja l = db.getObjectById(id);
+            JSONObject jo = new JSONObject();
+            jo.put("id", id);
+            jo.put("type", l.getClass());
+            jo.put("rent", l.getRent());
+            logger.debug(jo.toString());
+            return jo.toString();
+        }
+
+        logger.debug("Id_not_found");
+        return "Id_not_found";
+    }
+
+    /**
+     * Funkcja zwracajaca typ i czynsz w przeliczeniu na jednostke powierzchni obiektu o podanym id
+     * Implemenuje metode GET z frameworku Spring
+     */
+    @RequestMapping(method = RequestMethod.GET, produces = "application/json", value = "/get_rpa/{id}")
+    public String get_rpa(@PathVariable int id) {
+        logger.debug("Get_rpa, id:" + id);
+        System.out.println(id);
+        if (Objects.nonNull(db.getObjectById(id))){
+            Lokacja l = db.getObjectById(id);
+            JSONObject jo = new JSONObject();
+            jo.put("id", id);
+            jo.put("type", l.getClass());
+            jo.put("rpa", l.getRentPerArea());
+            logger.debug(jo.toString());
+            return jo.toString();
+        }
+
+        logger.debug("Id_not_found");
+        return "Id_not_found";
+    }
+
+    /**
+     * Funkcja zwracajaca typ i zuzycie wody dla obiektu o podanym id
+     * Implemenuje metode GET z frameworku Spring
+     */
+    @RequestMapping(method = RequestMethod.GET, produces = "application/json", value = "/get_water/{id}")
+    public String get_water(@PathVariable int id) {
+        logger.debug("Get_water, id:" + id);
+        System.out.println(id);
+        if (Objects.nonNull(db.getObjectById(id))){
+            Lokacja l = db.getObjectById(id);
+            JSONObject jo = new JSONObject();
+            jo.put("id", id);
+            jo.put("type", l.getClass());
+            jo.put("water", l.getWater());
+            logger.debug(jo.toString());
+            return jo.toString();
+        }
+
         logger.debug("Id_not_found");
         return "Id_not_found";
     }
