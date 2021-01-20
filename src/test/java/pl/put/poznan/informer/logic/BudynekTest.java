@@ -105,4 +105,51 @@ public class BudynekTest {
         verify(mock2poz, atLeastOnce()).getValidRooms(anyDouble());
     }
 
+    @Test
+    void testGetRent() {
+        when(mock1poz.getRent()).thenReturn(2000.0);
+        buddy.addPoziom(mock1poz);
+        assertEquals(buddy.getRent(), 2000.0);
+
+        when(mock2poz.getRent()).thenReturn(3000.0);
+        buddy.addPoziom(mock2poz);
+        assertEquals(buddy.getRent(), 5000.0);
+
+        verify(mock1poz, times(2)).getRent();
+        verify(mock2poz, atLeastOnce()).getRent();
+    }
+
+    @Test
+    void testGetRentPerArea() {
+        when(mock1poz.getRent()).thenReturn(1000.0);
+        when(mock1poz.getArea()).thenReturn(10.0);
+        buddy.addPoziom(mock1poz);
+        assertEquals(buddy.getRentPerArea(), 100.0);
+
+        when(mock2poz.getRent()).thenReturn(4000.0);
+        when(mock2poz.getArea()).thenReturn(10.0);
+        buddy.addPoziom(mock2poz);
+        assertEquals(buddy.getRentPerArea(), 5000.0/20.0);
+
+        verify(mock1poz, times(2)).getRent();
+        verify(mock1poz, times(2)).getArea();
+        verify(mock2poz, atLeastOnce()).getRent();
+        verify(mock2poz, atLeastOnce()).getArea();
+    }
+
+
+    @Test
+    void testGetWater() {
+        when(mock1poz.getWater()).thenReturn(10.0);
+        buddy.addPoziom(mock1poz);
+        assertEquals(buddy.getWater(), 10.0);
+
+        when(mock2poz.getWater()).thenReturn(15.0);
+        buddy.addPoziom(mock2poz);
+        assertEquals(buddy.getWater(), 25.0);
+
+        verify(mock1poz, times(2)).getWater();
+        verify(mock2poz, atLeastOnce()).getWater();
+    }
+
 }

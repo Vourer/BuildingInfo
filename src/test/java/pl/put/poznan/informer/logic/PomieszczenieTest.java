@@ -29,4 +29,13 @@ public class PomieszczenieTest {
         testPom.setHeating(heat);
         assertEquals(testPom.getHeating(), heat/cube);
     }
+
+    @Test
+    void testGetRentPerArea() {
+        double rent = 100.0;
+        double area = 10.0;
+        testPom.setRent(rent);
+        testPom.setArea(area);
+        assertEquals(testPom.getRentPerArea(), rent/area);
+    }
 }

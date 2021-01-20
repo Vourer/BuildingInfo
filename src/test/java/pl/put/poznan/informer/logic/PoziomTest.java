@@ -4,7 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
 import java.util.Collections;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +21,8 @@ public class PoziomTest {
             pom.setArea(2.0);
             pom.setHeating(6.0);
             pom.setCube(i);  // 1, 2, 3
+            pom.setRent(200.0);
+            pom.setWater(7.0);
             testPoz.addPomieszczenie(pom);
         }
     }
@@ -68,5 +69,14 @@ public class PoziomTest {
         roomNums.add(103);  // heating = 2
         assertEquals(testPoz.getValidRooms(1.0), roomNums);
     }
+
+    @Test
+    void testGetRent() { assertEquals(testPoz.getRent(), 600.0); }
+
+    @Test
+    void testGetRentPerArea() { assertEquals(testPoz.getRentPerArea(), 100.0); }
+
+    @Test
+    void testGetWater() { assertEquals(testPoz.getWater(), 21.0); }
 
 }
