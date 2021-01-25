@@ -9,6 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * Implementacja klasy odpowiedzialnej za testowanie klasy Poziom
+ * @version 2.0.0
+ * @author Delta
+ */
 public class PoziomTest {
     private Poziom testPoz;
 

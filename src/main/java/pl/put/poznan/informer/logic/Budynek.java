@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Implementacja klasy Budynek
- * @version 1.0.31
+ * @version 2.0.0
  * @author Delta
  */
 
@@ -33,6 +33,7 @@ public class Budynek extends Lokacja{
 
     /**
      * Funkcja zwracajaca sume pol powierzchni poziomow wchodzacych w sklad budynku
+     * @return suma pol powierzchni pomieszczen budynku
      */
     public double getArea(){
         double sum = 0;
@@ -44,6 +45,7 @@ public class Budynek extends Lokacja{
 
     /**
      * Funkcja zwracajaca objetosc budynku
+     * @return suma objetosci pomieszczen budynku
      */
     public double getCube(){
         double sum = 0;
@@ -56,6 +58,7 @@ public class Budynek extends Lokacja{
 
     /**
      * Funkcja zwracajaca stosunek mocy oswietlenia w budynku do jego powierzchni
+     * @return stosunbek mocy oswietlenia do powierzchni budynku
      */
     @Override
     public double getLight() {
@@ -79,6 +82,7 @@ public class Budynek extends Lokacja{
 
     /**
      * Funkcja zwracajaca stosunek zuzycia energii na ogrzewanie w przeliczeniu na jednostke objetosci w budynku
+     * @return stosunek zuzycia energii do objetosci budynku
      */
     @Override
     public double getHeating() {
@@ -102,6 +106,8 @@ public class Budynek extends Lokacja{
 
     /**
      * Funkcja zwracajaca liste pomieszczen przekraczajacych okreslony poziom zuzycia energii cieplnej w obrebie budynku
+     * @param coefficient - poziom zuzycia energii, ktory musi byc przekroczony
+     * @return lista pomieszczen
      */
     public List<Integer> getValidRooms(double coefficient){
         List<Integer> lista = new ArrayList<Integer>();
@@ -117,6 +123,7 @@ public class Budynek extends Lokacja{
 
     /**
      * Funkcja zwracajaca sume czynszy na wszystkich poziomach danego poziomu budynku
+     * @return czynsz
      */
     @Override
     public double getRent() {
@@ -129,6 +136,7 @@ public class Budynek extends Lokacja{
 
     /**
      * Funkcja zwracajaca stosunek sumy czynszy do sumy powierzchni wszystkich poziomów w budynku
+     * @return czynsz/suma powierzchni budynku
      */
     @Override
     public double getRentPerArea() {
@@ -143,6 +151,7 @@ public class Budynek extends Lokacja{
 
     /**
      * Funkcja zwracajaca sume zuzycia wody na wszystkich poziomach danego budynku
+     * @return woda
      */
     @Override
     public double getWater() {

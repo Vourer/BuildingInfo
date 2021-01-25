@@ -11,7 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 /**
  * Implementacja klasy BuildingInfoController
- * @version 1.0.22
+ * @version 2.0.0
  * @author Delta
  */
 @RestController

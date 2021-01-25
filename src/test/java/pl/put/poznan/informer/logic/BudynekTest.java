@@ -11,6 +11,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 
+/**
+ * Implementacja klasy odpowiedzialnej za testowanie klasy Budynek
+ * @version 2.0.0
+ * @author Delta
+ */
 public class BudynekTest {
     private Budynek buddy;
     private Poziom mock1poz;

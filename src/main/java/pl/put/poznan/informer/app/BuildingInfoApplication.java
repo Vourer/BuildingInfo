@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * Glowna klasa projektu BuildingInfo, odpowiedzialna za uruchamianie programu
- * @version 1.0.1
+ * @version 2.0.0
  * @author Delta
  */
 

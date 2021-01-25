@@ -4,6 +4,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+
+/**
+ * Implementacja klasy odpowiedzialnej za testowanie klasy Pomieszczenie
+ * @version 2.0.0
+ * @author Delta
+ */
 public class PomieszczenieTest {
     private Pomieszczenie testPom;
 

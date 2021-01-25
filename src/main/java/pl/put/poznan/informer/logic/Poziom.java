@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Implementacja klasy Poziom
  * Implementuje funkcje klasy Lokacja w analogiczny sposob co klasa Budynek
- * @version 1.0.31
+ * @version 2.0.0
  * @author Delta
  */
 public class Poziom extends Lokacja{
@@ -25,6 +25,7 @@ public class Poziom extends Lokacja{
 
     /**
      * Funkcja zwracajaca sume pol powierzchni pomieszczen wchodzacych w sklad poziomu
+     * @return suma pol powierzchni pomieszczen na poziomie budynku
      */
     public double getArea(){
         double sum = 0;
@@ -36,6 +37,7 @@ public class Poziom extends Lokacja{
 
     /**
      * Funkcja zwracajaca objetosc poziomu
+     * @return suma objetosci pomieszczen na poziomie budynku
      */
     public double getCube(){
         double sum = 0;
@@ -48,6 +50,7 @@ public class Poziom extends Lokacja{
 
     /**
      * Funkcja zwracajaca stosunek mocy oswietlenia na poziomie budynku w stosunku do jego powierzchni
+     * @return stosunbek mocy oswietlenia do powierzchni poziomy
      */
     @Override
     public double getLight() {
@@ -62,6 +65,7 @@ public class Poziom extends Lokacja{
 
     /**
      * Funkcja zwracajaca sume mocy oswietlenia wszystkich pomimeszczen na danym poziomie
+     * @return suma mocy oswietlenia pomieszczen na poziomie
      */
     @Override
     public double getLightPower() {
@@ -74,6 +78,7 @@ public class Poziom extends Lokacja{
 
     /**
      * Funkcja zwracajaca stosunek zuzycia energii na ogrzewanie w przeliczeniu na jednostke objetosci poziomu budynku
+     * @return stosunek zuzycia energii do objetosci poziomu budynku
      */
     @Override
     public double getHeating() {
@@ -88,6 +93,7 @@ public class Poziom extends Lokacja{
 
     /**
      * Funkcja zwracajaca sume zuzycia energii na ogrzewanie danego poziomu budynku
+     * @return suma zuzycia energii na ogrzewanie
      */
     @Override
     public double getHeatingPower() {
@@ -100,6 +106,8 @@ public class Poziom extends Lokacja{
 
     /**
      * Funkcja zwracajaca liste pomieszczen przekraczajacych okreslony poziom zuzycia energii cieplnej w obrebie poziomu
+     * @param coefficient - poziom zuzycia energii, ktory musi byc przekroczony
+     * @return lista pomieszczen
      */
     public List<Integer> getValidRooms(double coefficient){
         List<Integer> lista = new ArrayList<Integer>();
@@ -113,6 +121,7 @@ public class Poziom extends Lokacja{
 
     /**
      * Funkcja zwracajaca sume czynszy pomieszczen danego poziomu budynku
+     * @return czynsz
      */
     @Override
     public double getRent() {
@@ -125,6 +134,7 @@ public class Poziom extends Lokacja{
 
     /**
      * Funkcja zwracajaca stosunek sumy czynszy do sumy powierzchni wszystkich pomieszczen danego poziomu budynku
+     * @return czynsz/suma powierzchni poziomu
      */
     @Override
     public double getRentPerArea() {
@@ -139,6 +149,7 @@ public class Poziom extends Lokacja{
 
     /**
      * Funkcja zwracajaca sume zuzycia wody we wszystkich pomieszczeniach danego poziomu budynku
+     * @return woda
      */
     @Override
     public double getWater() {

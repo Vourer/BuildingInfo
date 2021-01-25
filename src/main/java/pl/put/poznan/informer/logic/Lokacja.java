@@ -2,7 +2,7 @@ package pl.put.poznan.informer.logic;
 
 /**
  * Implementacja klasy Lokacja
- * @version 1.0.31
+ * @version 2.0.0
  * @author Delta
  */
 public abstract class Lokacja {
